@@ -1,0 +1,62 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#header{
+  padding: 10px;
+  margin-bottom: 20px;
+  min-height: 200px;
+}
+
+#h1{
+  color:firebrick;
+}
+
+.box{
+  height: 400px;
+  padding: 5px;
+  color: #fff;
+  opacity: 0;
+  width: 100%;
+  background-color: black;
+  padding: 28px;
+}
+.box:hover{
+  opacity: 0.7;
+  transition: 1s;
+}
+
+.article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img{
+
+  opacity: 100;
+  width: 70%;
+  height: 400px;
+  background: url('http://cdn.wallpapersafari.com/21/35/lSiJan.jpg');
+}
+
+@media screen and (max-width: 320px){
+  .article{
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 321px) (max-width: 1000px) {
+  .article{
+    width: 50%;
+    margin-top: 20px;
+  }
+}

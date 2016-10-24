@@ -1,0 +1,10 @@
+
+*{
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.div{
+  height: 200px;
+  background-color: blue;
+}

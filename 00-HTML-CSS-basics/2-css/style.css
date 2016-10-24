@@ -1,0 +1,80 @@
+
+*{
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  border: 1px solid white;
+}
+
+
+
+
+.header, .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+  /*background: url('http://media.istockphoto.com/photos/medium-golden-brown-wood-texture-background-picture-id513694258?k=6&m=513694258&s=170667a&w=0&h=xETakP7VjpAtRj9e6rJRYNqw_AJLZ9ovLlC4ebR5BOQ=');*/
+  width: 100%;
+  height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 46px;
+}
+.navigation{
+  width: 25%;
+  height: 400px;
+  float:left;
+  font-size: 12px;
+}
+
+.content{
+
+  height: 400px;
+  width: 50%;
+  float: left;
+  font-size: 14px
+}
+
+.article{
+  height: 200px;
+  width: 100%;
+}
+
+.sidebar{
+
+  height: 400px;
+  width: 25%;
+  float: right;
+  font-size: 10px
+}
+.footer{
+
+  clear: both;
+  width: 100%;
+  height: 100px;
+  color: white;
+  font-size: : 10px;
+}
+
+ [class$="r"]{
+  background-color: magenta;
+
+}
+
+[class*="a"]:not([class$="r"]){
+  background-color: blue;
+}
+
+/*---- punto 6 respuesta ----*/
+/**:not([class*="z"]){
+  font-size: 10px;
+
+}*/
+
+/*---- punto 7 respuesta ----*/
+.oh-no-inline-styles {
+  background-color: green !important;
+}

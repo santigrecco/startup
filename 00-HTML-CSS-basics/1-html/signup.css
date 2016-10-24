@@ -1,0 +1,12 @@
+*{
+  margin: 10px;
+}
+
+body{
+  display: flex;
+  align-content: center;
+}
+form{
+  margin: 100px auto auto auto;
+
+}
