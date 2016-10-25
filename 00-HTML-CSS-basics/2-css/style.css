@@ -78,3 +78,19 @@
 .oh-no-inline-styles {
   background-color: green !important;
 }
+
+@media screen and (max-width: 700px){
+  .navigation{
+    float:none;
+    width: 100%
+  }
+  .content{
+    float: none;
+    width: 100%;
+  }
+  .sidebar{
+    float: none;
+    width: 100%;
+  }
+
+}

@@ -47,16 +47,3 @@ html{
   height: 400px;
   background: url('http://cdn.wallpapersafari.com/21/35/lSiJan.jpg');
 }
-
-@media screen and (max-width: 320px){
-  .article{
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-@media screen and (min-width: 321px) (max-width: 1000px) {
-  .article{
-    width: 50%;
-    margin-top: 20px;
-  }
-}
