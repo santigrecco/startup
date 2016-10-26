@@ -12,7 +12,8 @@ $(document).ready(function(){
   $('.btn').click(function(){
     httpRequest('http://api.icndb.com/jokes/random', function(data){
       if(data.status == 200){
-        section.text(data.responseText);
+        var jsonData = JSON.parse(data.responseText);
+        section.text(jsonData.value.joke);
       }else{
         section.css('color','red');
         section.text('error:' + error.status);
