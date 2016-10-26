@@ -1,0 +1,79 @@
+*{
+  box-sizing: border-box;
+}
+
+.div{
+  display: flex;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 40px;
+}
+
+section {
+  display: flex;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: none;
+}
+
+.btn{
+  margin-top: 30px;
+  margin-left: 10%;
+  float: left;
+}
+.github_list{
+  list-style: none;
+  flex-direction: column;
+  display: flex;
+  width: 80%;
+  margin:auto;
+  margin-top: 50px;
+  padding: 0px;
+  -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.54);
+  -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.54);
+  box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.54);
+}
+.gh_container{
+  list-style: none;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+
+}
+
+.gh_container:first-child:hover{
+  border-bottom: 1px solid #FF2A68;
+}
+.gh_container:last-child:hover{
+  border-top: 1px solid #FF2A68;
+}
+.gh_container:not(:first-child):not(:last-child):hover{
+  border-bottom: 1px solid #FF2A68;
+  border-top: 1px solid #FF2A68;
+}
+
+.srch_gh{
+  margin-top: 30px;
+  position: relative;
+  left: 50%;
+
+}
+
+#table{
+  margin: 30px;
+}
+.tr, .td, .th {
+  border: 1px solid black;
+}
+
+#srch{
+  margin: 5px;
+}
