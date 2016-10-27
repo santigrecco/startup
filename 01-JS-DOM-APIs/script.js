@@ -1,4 +1,7 @@
 var matrix = [
+  ['1', '2', '3', '4'],
+  ['hello', 'how', 'are', 'you'],
+  ['hello', 'how', 'are', 'you'],
   ['hello', 'how', 'are', 'you'],
   ['hello', 'how', 'are', 'you'],
   ['hello', 'how', 'are', 'you'],
@@ -29,7 +32,7 @@ $(document).ready(function(){
     httpRequest('https://api.github.com/search/repositories?q='+srch, chargeGithubList);
   })
 
-  matrixToDOM(matrix, 'clase', 'table');
+  matrixToDOMWithoutJquery(matrix, 'clase', 'table');
 });
 
 
@@ -75,6 +78,30 @@ function matrixToDOM(matrix, tableClass, appendToId){
       }
     });
     table.append(tr);
+  });
+
+  $('#'+appendToId).append(table);
+}
+
+function matrixToDOMWithoutJquery(matrix, tableClass, appendToId){
+  var table = document.createElement('table');
+  table.className = 'tableClass';
+  matrix.forEach(function(el,index,arr){
+    var tr = document.createElement('tr');
+    el.forEach(function(element){
+      if(index == 0){
+        var th = document.createElement('th');
+        th.className = 'th';
+        th.appendChild(document.createTextNode(element));
+        tr.appendChild(th);
+      }else{
+        var td = document.createElement('td');
+        td.className = 'td';
+        td.appendChild(document.createTextNode(element));
+        tr.appendChild(td);
+      }
+    });
+    table.appendChild(tr);
   });
 
   $('#'+appendToId).append(table);
