@@ -1,15 +1,25 @@
 'use strict'
 
 $(document).ready(function(){
+
+  EventEmmiter.call(Movie.prototype);
+
   var movie = new Movie('Toy Story','1999',100);
   var movie2 = new Movie('White Snow','1995',90);
   var movie3 = new Movie('Lion King','2001',110);
 
-  var events = new EventEmmiter();
-  events.on('play', function(){
-    console.log('play');
-  })
-  events.emit('play');
+  // var events = new EventEmmiter();
+  // events.on('play', function(){
+  //   console.log('play');
+  // })
+  // events.emit('play');
+
+  var logger = new Logger();
+
+  movie.on('play', logger.log);
+  movie.play();
+
+
 
   Social.call(movie);
   console.log(movie.share('santi'));
@@ -27,10 +37,10 @@ $(document).ready(function(){
   var simba = new Actor('simba', 3);
 
   movie3.addCast(cast);
-  console.log(movie3.cast);
+
 
   movie3.addCast(simba);
-  console.log(movie3.cast);
+
 
 });
 
@@ -41,7 +51,7 @@ function Movie(title, year, duration){
   this.duration = duration;
   this.cast = [];
   this.play = function(){
-    return 'playing';
+    this.func('play');
   }
   this.pause = function(){
     return 'paused';
@@ -52,7 +62,7 @@ function Movie(title, year, duration){
   this.addCast = function(obj){
     if(Object.prototype.toString.call( obj ) === '[object Array]'){  //check if obj is an array
       for (var i = 0; i < obj.length; i++) {
-        this.cast.push(obj[i]);  
+        this.cast.push(obj[i]);
       }
     }else{
       this.cast.push(obj);
@@ -63,10 +73,6 @@ function Movie(title, year, duration){
 function EventEmmiter(){
   this.listening;
   this.func;
-
-  this.play = function(){
-    this.emit('play');
-  }
   this.emit = function(e){
     if(e == this.listening){
       this.func();
@@ -95,4 +101,10 @@ function Social(){
 function Actor(name, age){
   this.age = age;
   this.name = name;
+}
+
+function Logger(){
+  this.log = function(info){
+    console.log(info);
+  }
 }
