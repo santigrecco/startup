@@ -20,14 +20,12 @@ $(document).ready(function(){
   movie.play();
 
 
-
-  Social.call(movie);
+  // Social.call(movie);
+  Object.assign(movie, Social);
   console.log(movie.share('santi'));
   console.log(movie.like('santi'));
 
   var morgan = new Actor('Morgan Freeman', 60); //aprox
-
-
   var cast = [
     new Actor('timon',3),
     new Actor('scar', 5),
@@ -89,14 +87,6 @@ function EventEmmiter(){
   }
 }
 
-function Social(){
-  this.share = function(name){
-    return 'share ' + this.title + ' with ' + name;
-  }
-  this.like = function(name){
-    return name + ' like ' + this.title;
-  }
-}
 
 function Actor(name, age){
   this.age = age;
@@ -106,5 +96,23 @@ function Actor(name, age){
 function Logger(){
   this.log = function(info){
     console.log(info);
+  }
+}
+
+// function Social(){
+//   this.share = function(name){
+//     return 'share ' + this.title + ' with ' + name;
+//   }
+//   this.like = function(name){
+//     return name + ' like ' + this.title;
+//   }
+// }
+
+var Social = {
+  share: function(name){
+    return 'share ' + this.title + ' with ' + name;
+  },
+  like: function(name){
+    return name + ' like ' + this.title;
   }
 }
