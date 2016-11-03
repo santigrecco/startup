@@ -10,36 +10,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.5.8/angular-cookies.js" charset="utf-8"></script>
+    <script src="https://code.angularjs.org/1.5.5/angular-cookies.min.js" charset="utf-8"></script>
   </head>
 
   <body ng-controller="controller">
     <header class="jumbotron">
       <div class="container">
-        <h2>Angular MVC</h2>
+        <h2>Movies</h2>
       </div>
     </header>
-    <div class="container">
+    <div class="container" ng-view>
       <div class="row">
         <div class="col-md-6">
           <div class="input-group">
-            <input type="text" id="movieInput" class="form-control" placeholder="Add movie..." ng-model="movieToAdd">
-            <div class="input-group-btn">
-              <button class="btn btn-success" ng-click="add() ">Add</button>
-            </div>
+            <input type="text" id="movieInput" class="form-control" placeholder="Movie title" ng-model="title">
+            <input type="text" id="movieInput" class="form-control" placeholder="Movie year" ng-model="year">
+            <textarea  class="form-control" id="movieInput" cols="40" rows="5" placeholder="Description" ng-model="description"></textarea>
+            <button class="btn btn-success btn-lg" ng-click="add()">Add</button>
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
         <div class="col-md-6">
           <div class="container">
             <ul>
               <li ng-repeat="movie in movies">
-                  {{movie}}
+                  <blockquote>
+                    <p>
+                      <b>{{movie.title | capitalize}}</b><br>
+                      {{movie.year}}
+                    </p>
+                  </blockquote>
               </li>
             </ul>
           </div>
         </div>
     </div>
   </div>
+    <script src="classes/movie.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
     <script src="controller/controller.js" charset="utf-8"></script>
   </body>

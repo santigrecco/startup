@@ -5,6 +5,8 @@
 li {
   list-style: none;
   margin: 10px;
-  font-weight: bold;
-  font-size: 14px;
+}
+
+#movieInput {
+  margin-bottom: 10px;
 }
